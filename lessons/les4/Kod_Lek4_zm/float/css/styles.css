@@ -1,0 +1,101 @@
+*{
+	margin: 0;
+	padding: 0	;
+}
+
+/*.image{
+float: left;
+width: 100px;
+height: 100px;
+}
+*/
+
+.header{
+	background-color: grey;
+}
+
+.sidebar{
+	background-color: green;
+	float: left;
+	/*width: 20%;*/
+}
+
+/*.content{
+	background-color: yellow;
+	float: right;
+	width: 50%;
+}
+*/
+.footer{
+	background-color: red;
+	clear: both;
+}
+
+
+.menu li{
+	float: left;
+	margin: 5px;
+	list-style: none;
+	background: green;
+	border: 3px solid black;
+}
+
+.menu{
+	background: yellow;
+	/*position: relative;*/
+	/*overflow: hidden;*/
+	 /*Обрезает весь контент, который выходит за рамки нашего блока 
+											и вместе с тем зачищает границы*/
+}
+
+
+/*
+.container{
+	position: relative;
+	overflow: hidden;
+}
+*/
+
+.clearfix:after{
+	content: '';
+	clear: both;
+	display: block;
+}
+
+.news{
+	/*float: left;*/
+	float: right;
+	background-color: black;
+	color: white;
+	width: 20%;
+}
+
+.content{
+	background-color: yellow;
+	/*float: left;*/
+	width: 50%;
+	margin: 0 auto;
+}
+
+
+														/*Location(last background)*/
+
+
+.location__data{
+float: right;
+width: 40%;	
+}
+
+
+.location__map{
+	float: left;
+	width: 60%;
+}
+
+
+.clearfix:after{
+	content: '';
+	clear: both;
+	display: block;
+}
+

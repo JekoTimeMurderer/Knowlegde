@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+							<!-- с помощью float можно организват обтекание картинки текстом -->
+<!-- <img class="image" src="http://cs308121.vk.me/v308121243/43a1/Ov3ViluA4UU.jpg" alt="кот">
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ab amet, beatae ratione voluptatibus! Eius dolor a non pariatur aperiam commodi velit voluptatem. Voluptates, numquam eos tenetur consequuntur consequatur nobis.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ab amet, beatae ratione voluptatibus! Eius dolor a non pariatur aperiam commodi velit voluptatem. Voluptates, numquam eos tenetur consequuntur consequatur nobis.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ab amet, beatae ratione voluptatibus! Eius dolor a non pariatur aperiam commodi velit voluptatem. Voluptates, numquam eos tenetur consequuntur consequatur nobis.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ab amet, beatae ratione voluptatibus! Eius dolor a non pariatur aperiam commodi velit voluptatem. Voluptates, numquam eos tenetur consequuntur consequatur nobis.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ab amet, beatae ratione voluptatibus! Eius dolor a non pariatur aperiam commodi velit voluptatem. Voluptates, numquam eos tenetur consequuntur consequatur nobis.</p>
+ -->	
+
+
+
+ 								<!-- Применение float для многоколоночных макетов -->
+
+
+
+<!-- 1)Создадим многоколоночный макет (поток из блочных элементов) и зачистим границы с помощью первого метода: clear: both; -->
+
+
+
+
+<!-- 
+
+<div class="header">HEADER HEADER HEADER HEADER HEADER HEADER HEADER </div> 	<div class="sidebar">SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR </div>		<div class="content">CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </div>		
+<div class="footer">FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER</div>		 -->	
+
+
+
+											<!-- КОММЕНТАРИИ К ПЕРВОМУ МЕТОДУ -->
+
+     <!-- 2)Сделаем колонку слева с помощь float-left и колонку справа с помощью float-right (в css), помня о том, что плавающие элементы(т.е. те, которым задано свойство float) берут свой размер по контенту и потому для того, чтобы на сайте была чёткая структура нам нужно задать для siderbar и content фиксированную ширину либо в процентах либо в пикселях.(footer мы пока закоментили, поле задание размеров раскоментим, чтобы увидеть то, что он не чувствует плавающих элементов выбившихся из потока (sidebar и content), которых остальные элементы не чувствуют(контент окружающих(только окружающих) элементов их чувтсвует и обтекает, но див не чувствует и подпрыгивает до первого стандартного элемента, который не плаващий т.е. который не выбился из потока т.е. не получил свойство float).Также стоит заметить, что если плавающих елементов больше чем один, то они образуют как бы свой поток и не залязят друг на друга. Для того, чтобы вернуть плавающие елементы в поток (т.е., чтобы их стали чувствовать окружающие елементы) им нужно зачистить границы.
+     Т.е. самый простой алгоритм для постройки двухколоночного макета: есть header (обычный блок) потом идет 2 плавающих блока (sidebar и content) которые распложены слева (float: left;) и справа (float:right;) и в конце идет блок (footer), который зачищает границы после них (с помощью свойства clear: both;) таким образом footer ощущает sidebar и content		 -->
+
+<br>     
+<br>     
+<br>     
+<br>     
+										
+			<!-- 2)Сделаем менюшку (горизонтальную) с помощью свойства float и примеменим метод зачистки границ №2, также применим это метод на нашем многоколоночном макете из первого метода -->
+
+
+
+<!-- Делая менющку с помощью флоата помни, что когда задано float-left, то меняюшка выстраивается в ряд в левом краю с лева на право как бы (float right та же аналогия)
+Также при верстании менюшки (смотри ниже) с помощью флоата мы сталкиваемся с проблемой: не задает background. Можно зачистить гранцы как мы делали до этого, но можно использовать новый метод: задать блоку, в котором ты хочешь зачистить гранцы свойство position:relative и следующей строчкой overflow:hidden. Последнее свойство а)не пустит(обрежет) весь контент который выходит за рамки нашего блока и б)зачистить гранины нашему блоку т.е. если внутри нашего блока есть плавающие елементы и для родителя задать свойство overflow:hidden, то внутренние елементы будут зачищены и наш родитель начнет их ощущать т.е. высота нашего родителя будет не 0, а по контенту, который там есть, по контенту плавающих елементов (в нашем случае ul class="menu" ощутит cуществующие в нем li и применит к ним background: yellow;, т.е. поток там восстановится), кстати это можно зафиксировать в инспекоре хрома: уберая галочку с overflow:hidden видим, что высота нашего ul clasчs="menu" становитится равна 0, а при добавление галочки - 34 -->
+
+
+<!-- 
+<ul class="menu">
+ 	<li><a href="">Пункт 1</a></li>
+ 	<li><a href="">Пункт 2</a></li>
+ 	<li><a href="">Пункт 3</a></li>
+ 	<li><a href="">Пункт 4</a></li>
+ 	<li><a href="">Пункт 5</a></li>
+ </ul>  -->
+
+
+<!-- Применим к нашему двухколоночному макету метод №2: для родителя в котором есть плавающие блоки зададим свойство overflow:hidden. Т.е., чтобы вернуть в поток наши плавающие елементы(sidebar и content). Для этого их нужно обернуть в еще один блок (обернем их в div class="container") и зададим нашему контейнеру position: relative; и overflow:hidden; таким образом мы зачистим границы в родителе (container) у которого есть плавающие елементы (content и sidebar). Минус этого метода в том, что свойство overflow:hidden обрезает весь контент, который выходит за рамки нашего блока и если менюшка будет выпадающей, то её данное свойство обрежет. Т.е. это свойство нужно использовать тогда, когда мы уверены, что за рамки нашего блока ничего не выпадет
+  -->
+
+<!-- 
+<div class="header">HEADER HEADER HEADER HEADER HEADER HEADER HEADER </div> 	
+
+<div class="container">
+<div class="sidebar">SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR</div>
+
+<div class="content">CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </div>		
+</div>
+
+<div class="footer">FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER</div>		
+ -->
+ 
+
+				<!-- Третий способ зачистки границ (самый эффективный)
+				Добавляем класс clearfix к блоку в котором есть плавающие (в нашем случае добавляем к container класс clearfix) и уже для clearfixa задаем в css clearfix:after и ниже прописываем стандартые свойства для псевдокласса after{ content: '';} и добавляем свойство первого метода: clear:both и display:block; Также можно было бы прописать псевдоелемент after для containera. -->
+			
+				<!-- Используем метод №3 на нашем многоколоночном макете -->
+<!-- 
+<div class="header">HEADER HEADER HEADER HEADER HEADER HEADER HEADER </div> 	
+
+<div class="container clearfix">
+<div class="sidebar">SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR SIDEBAR</div>
+
+<div class="content">CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </div>		
+</div>
+
+<div class="footer">FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER</div>	 -->	
+				<!-- Используем метод №3 на нашей менюшке  -->
+
+<!-- Добавим к классу menu класс clearfix и это значит что к ul внизу прибавится after который зачистит все границы после плавающих li -->
+<!-- 
+<ul class="menu clearfix">
+ 	<li><a href="">Пункт 1</a></li>
+ 	<li><a href="">Пункт 2</a></li>
+ 	<li><a href="">Пункт 3</a></li>
+ 	<li><a href="">Пункт 4</a></li>
+ 	<li><a href="">Пункт 5</a></li>
+ </ul>  -->
+
+						
+						<!-- Четырехколоночный макет -->		
+
+		<!-- Не забываем указывать фиксированные размеры для плавающих елементов дабы создать получить четкую структуру, поэтому зададим news ширину 20%, чтобы наш news запрыгнул в свободное место.
+		Также сталкиваемся с проблемой: когда коментим sidebar, то наш content, а за ним и news прыгают на место sidebar, хотя так быть не должно (они должны оставаться на своих местах), делаем следующее: прописываем news float:right; возвращая его тем самым в правый конец дальше выключаем float в нашем content тем самым возвращая его в поток (он становится сразу после header как обычный блочный елемент). Теперь news находится после content в правом углу (уперается в поток и там уже начинают плавать в лево или в право(поведение всех блочных елементов), в нашем случае news уперся в правый нижний угол упераясь в поток). Теперь, чтобы все нормально смотрелось нужно поставить news вверх. Ставим наш news перед content (news уплывет в правый край, а потом уже cтанет content)Если бы news был не плавающим то была бы обычная структура расположенных вертикально блочных елементов.
+		Теперь нужно установить content по центру, чтобы убрать его с места sidebara. Для этого зададим ему тривиальное margin: 0 auto; Теперь включаем sidebar и задаем ему подходящую ширину.
+
+		-->
+
+
+<div class="header">HEADER HEADER HEADER HEADER HEADER HEADER HEADER </div> 	
+
+<div class="container">
+<div class="sidebar">SIDEBAR</div>
+
+<div class="news">NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS NEWS</div>
+
+<div class="content">CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT</div>		
+</div>
+
+<div class="footer">FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER</div>	
+
+</body>
+</html>

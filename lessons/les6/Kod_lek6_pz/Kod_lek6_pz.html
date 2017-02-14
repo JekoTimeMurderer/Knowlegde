@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Kod_lek6_pz</title>
+
+<link rel="stylesheet" href="css/Kod_lek6_pz.css">	
+
+</head>
+<body>
+	
+ 																			<!-- Списки  -->
+
+<!-- <b>Основной набор</b>
+<ol>
+  <li>item</li>
+  <li>item
+    <ul>
+      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio reiciendis, error illo at. Amet est dicta laboriosam eius suscipit corporis explicabo, ipsum eaque, quaerat, alias, ad animi ipsa obcaecati!</li>
+      <li>sub-item</li>
+    </ul>
+  </li>
+  <li>item</li>
+  <li>item</li>
+  <li>item</li>
+  <li>item</li>
+</ol> 																			 -->
+
+<!-- Заместо стандартного буллета можно задать через list-style-image любую другую картинку, но тогда мы не сможем никак воздействовать на неё (задавать размеры и т.д.). Распостранённым вариантом задания картинки вместо буллета является задание ёё через псевдокласс before. -->
+
+<!-- Опробуем метод задания буллета для иконки через псевдокласс: before;
+Для этого сверстаем список
+Итак, у нас есть список из 4-ех лишек, в предпоследней лишке у нас еще один
+список. Присваеваем классы обеим спискам (всему нашему списку и вложенному 
+в предпоследнюю лишку списку). Первым делом Обращась к этим классам убераем 
+все буллеты (list-style:none). Дальше перед всеми лишками задаем абсолютное
+позиционирование, а также задаем отступ в право 25px (с помощью margin: -25px)
+и в контенте пишем большое тире.Таким образом мы задали отступ от нашей лишки 
+до тире этой лишки и теперь наша лише тире и наша ли разделены отступом в 25px.
+Дальше обращаемся к лишкам во вложенном списке, задаем перед ними также абс-
+олютное позиционирование, задаем размеры нашего буллет-фона-картинки, а также
+задаем отступ от нашей лишки до нашего буллета (margin-left: -20px). После 
+этого вставляем картинку через backgroud.
+  а потом картинку.
+ -->
+
+
+<!-- <br>
+
+<ol class="test">
+	<li>item</li>
+	<li>item</li>
+	<li>item
+		<ul class="test__inside">
+			<li>item</li>
+			<li>item</li>
+		</ul>
+	</li>
+	<li>item</li>
+</ol>
+
+<br>
+
+<ol class="test1">
+	<li><span>sfsf</span></li>
+	<li><span>fsfsfs</span></li>
+	<li><span>fsfsfs</span></li>
+	<li><span>fsfsfs</span></li>
+	<li><span>fsfsfs</span></li>
+</ol> -->
+
+<!-- Генерируемое содержимое -->
+
+<!-- Генерируемое содержимое это про то, что можно из css каким-то образом генерировать что-то, что появится на экране т.е. именно содержимое (картинку вставить либо текст либо еще что-то). Самый простейший вариант сделать генерируемое содержимое можно сделать с помощью нашего свойства content, а именно не просто добавить контент перед елементом, а добавить контент из дата-атрибута (атрибуты, которые начинаются с data-(название). С помощью таких дата атрибутов можно передавать какие-то данные, которые не видны на странице изначально.)--> 
+
+<!-- <div data-mydata="hey! that is my data" class="generation" title="hello"></div> -->
+
+<br>
+
+<!-- Также с помощью cвойства content мы можем вставлять не только текст, но и картинки. -->
+
+<!-- <div class="lol">content</div> -->
+
+<!-- <br> -->
+
+<!-- Актуальный пример -->
+	
+<!-- <div data-title="hey! that is my data" class="actual">
+	fsfsfsfsfs а ыа ыа ыа ыа ыаыа
+</div> -->
+
+<!-- Программирование в css -->
+
+<!-- <h1>Pagination CSS Counter</h1>
+
+<section>
+	<h2>Jump to page</h2>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>	
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+	<a href="#"></a>
+</section> -->
+
+<!-- Еще один пример по программированию в css -->
+
+
+
+<!-- <h1>Overlapping CSS Counters</h1>
+<section>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+</section>
+<section>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+</section>
+<section>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+</section>
+<section>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+</section> -->
+
+															<!-- Еще один примерчик  -->
+
+	<!-- <h1>Selection CSS Counter</h1>
+<section class="characters">
+  <h2>Select characters:</h2>
+  <input id="b" type="checkbox"><label for="b">Relm</label>
+  <input id="c" type="checkbox"><label for="c">Mog</label>
+  <input id="e" type="checkbox"><label for="e">Celes</label>
+  <input id="g" type="checkbox"><label for="g">Edgar</label>
+  <input id="i" type="checkbox"><label for="i">Gau</label>
+  <input id="k" type="checkbox"><label for="k">Terra</label>
+  <input id="l" type="checkbox"><label for="l">Locke</label>
+  <input id="o" type="checkbox"><label for="o">Cyan</label>
+</section>
+<section class="total">
+  Total selected:
+</section> -->
+
+
+<!-- Игра в сss -->
+
+<!-- <h1>CSS Counter Game</h1>
+<section>
+  <h2>Pick the numbers that add up to 72:</h2>
+  <input id="a" type="checkbox"><label for="a">64</label>
+  <input id="b" type="checkbox"><label for="b">16</label>
+  <input id="c" type="checkbox"><label for="c">-32</label>
+  <input id="d" type="checkbox"><label for="d">128</label>
+  <input id="e" type="checkbox"><label for="e">4</label>
+  <input id="f" type="checkbox"><label for="f">-8</label>
+  <span class="sum"></span>
+</section> -->
+
+															<!-- Layout -->
+
+<!-- layout - это про то, как расположить все блоки на странице. Т.е. когда
+говорят о layout имеют ввиду, что нам нужно разместить что-то слева по центру
+и справа. Т.е. layout может быть а)горизонтальный, когда елементы располагаются в строку и б)вертикальный, когда они располагаются друг под другом. Также для узкого экрана елементы могут располагаться вертикально(layout для вертикальной ориентации экрана), а уже для широкой горизонтально(layout для горизонтальной ориентации экрана).  -->															
+
+  <!-- в построении лэйаута есть несколько задач:
+
+  — расположить контент горизонтально можно тремя способами:
+    1)display: inline-block, 
+    2)float: left,
+    3)position: absolute
+    4)таблица
+    5)flexbox
+
+  — сделать так, чтобы контент не переполнял колонку. Этого можно добиться
+  3-мя способами<div class=""></div>
+    1)min-width,
+    2)overflow,
+    3)таблица
+
+  — сделать так, чтобы колонки никогда не проваливались одна под другую.
+    white-space: nowrap;
+    сумма ширин float-блоков 
+    всегда равна или меньше 
+    ширины родителя
+    
+  — отступы, бордеры и фон
+    как правило вложенный элемент
+    чтобы не допустить ширины > 100%
+    (50% + 10px || + 10px 50%) -->
+
+
+<!-- layout c помощью inline-block -->
+
+<!-- <div class="container">
+  <div class="left">левая колонка</div>
+  <div class="center">
+    средняя колонка
+    <br/> более высокая,
+    <br/> занимает 3 строки
+  </div>
+  <div class="right">правая колонка</div>
+</div>  -->
+
+<!-- layout c помощью float -->
+
+
+<!-- <div class="container">
+  <div class="left">левая колонка</div>
+  <div class="center">
+    средняя колонка
+    <br> более высокая,
+    <br> занимает 3 строки
+  </div>
+  <div class="right">правая колонка</div>
+</div> -->
+
+<!-- layout c помощью absolute -->
+
+<!-- <div class="container">
+  <div class="left">левая колонка</div>
+  <div class="center">
+    средняя колонка
+    <br> более высокая,
+    <br> занимает 3 строки
+  </div>
+  <div class="right">правая колонка</div>
+</div>
+
+<br> Контент после лэйаута -->
+
+
+<!-- Интересный вариант многоколоночного макета с применением absolute -->
+
+<!-- <div class="container">
+  <div class="left">верхняя колонка</div>
+  <div class="top-center">
+    средняя колонка
+    <br> более высокая,
+    <br> занимает 3 строки
+  </div>
+  <div class="bottom-center">нижняя</div>
+</div> -->
+
+
+<!-- layout с помощью flexbox(flexible box - гибкий блок) -->
+
+<!-- http://frontender.info/a-guide-to-flexbox/ -->
+
+<!-- На данный момент самый передовой способ layout. Но из-за его новизны, (этого метода) часто возникает необходимость использовать вентерные префиксы (-webkit-flex). 
+
+Интересная рекоммендация: для резинового сайта нужно всегда делать max-width, чтобы наш сайт на больших экранах не разъезжался, а также min-width, чтобы наш сайт не сильно сжимали на маленких экранах.
+ -->
+
+
+<div class="grid">
+  <div class="col fluid1">
+
+    <h2>Fluid</h2>
+
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
+      Mauris placerat eleifend leo.</p>
+
+  </div>
+  <div class="col fixed">
+
+    <h2>Fixed</h2>
+
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
+      Mauris placerat eleifend leo.</p>
+
+  </div>
+  <div class="col fluid2">
+
+    <h2>Fluid</h2>
+
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
+      Mauris placerat eleifend leo.</p>
+
+
+  </div>
+</div>
+
+<!-- Также, если у нас заданы через команду flex: разным элементам заданые какие-то цифры и мы хотим узнать какое количество контента приходится на каждый элемент, то нужно просто сложить все цифры во всех flex-ах и место контаейнера, которое приходится на эти flexы просто разделить на это число (сумму всех flex).  -->
+
+
+                              <!-- media-query -->
+
+<!-- media-query это про то, как менять верстку в зависимости от ширины экрана.
+1)Первый вариант реализовать media-query через link т.е. таблицы стилей для разной ширины экрана.    
+Напр, внизу таблица стилей example.css подключиться только в том случае, если ширина нашего браузера будет меньше 800px
+<link rel="stylesheet" media="(max-width: 800px)" href="example.css" /> 
+2)Второй задаваие media-query можно реализовать так, например :
+<style>
+@media (max-width: 600px) {
+.facet_sidebar {
+display: none;
+}
+}
+</style>
+Опять же, этот вариант будет работать только в том случае, если ширина экрана будет меньше 600px, если она (ширина экрана) будет больше 600px, то sidebar в css будет виден (display:none не будет работать)
+-->
+
+</body>
+</html>
+
