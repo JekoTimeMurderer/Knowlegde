@@ -1,0 +1,416 @@
+																/*Transition*/
+
+/*Первый пример*/
+
+/*div {
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  transition: background-color 0.3s linear 1s;
+}
+
+div:hover {
+  background-color: blue;
+}*/
+
+/*Второй пример*/
+
+/*div {
+  width: 200px;
+  height: 200px;
+  background: yellow;
+  transition: margin 0.2s linear, background-color 0.2s linear;
+}
+
+div:hover {
+  background-color: black;
+  margin-left: 150px;
+}*/
+
+/* Третий пример */
+
+/*div {
+  transition: margin 2s ease-in;
+   cubic-bezier(0,.85,.98,0) 
+}
+
+div:hover {
+  margin-left: 500px;
+}*/
+
+/*Пример с использованием всех свойств transition*/
+
+/*div {
+  width: 200px;
+  height: 200px;
+  border: 6px solid orange;
+  transition: left 0.5s linear, top 0.5s linear;
+  transition-delay: 0, 0.5s;
+
+  
+  transition: margin-left 0.5s linear 1s, margin-top 0.5s linear 0.1s;
+}
+
+div:hover {
+  margin-left: 30px;
+  margin-top: 30px;
+}
+*/
+
+																/*Transformation*/
+
+
+/*div {
+  width: 200px;
+  height: 200px;
+  background: orange;
+}*/
+
+  /* 	
+	сдвигаем 
+	  translate(X,Y)
+	    translateX(X), translateY(Y)
+	
+	изменяем размер, 
+	относительно текущего (1 = 100%)
+	  scale(X,Y)
+	    scaleX(X), scaleY(Y)
+	    
+	переворачиваем
+	  rotate(#deg)
+	  
+	искажаем
+	  skew(Xdeg,Ydeg)
+	    skewX(Xdeg), skewY(Ydeg)
+*/
+
+/*
+ body{
+ 	margin:100px;
+ }
+
+
+div:hover{
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+  transform:skew(-20deg, 30deg);
+  transform: translate(20px, 40px) scale(0.75, 1.25) rotate(45deg) skew(25deg, 15deg);
+}
+*/
+
+/*Пример по transition/transformation*/
+
+/*body {
+  margin: 40px;  
+}
+
+.demo2d {
+  height: 300px;
+}
+
+.demo2d .demo2d__demo {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: #fc0;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all linear 0.3s;
+}
+
+.demo2d:hover .demo2d__demo_pos_t {
+  z-index: 4;
+  margin-left: 30px;
+  transform: rotate(-30deg) skew(0deg, 30deg) scale(1.5);
+  background: -webkit-gradient( linear, left bottom, left top, color-stop(0.24, rgb(212, 85, 0)), color-stop(0.62, rgb(250, 164, 15)), color-stop(1, rgb(245, 231, 215)));
+}
+
+.demo2d:hover .demo2d__demo_pos_b {
+  z-index: 1;
+  margin-top: 55px;
+  margin-left: 30px;
+  transform: rotate(-30deg) skew(0deg, 30deg) scale(1.5);
+  background: rgb(250, 164, 15);
+}
+
+.demo2d:hover .demo2d__demo_pos_l,
+.demo2d:hover .demo2d__demo_pos_r {
+ z-index: 2;
+margin-top: 27px;
+  margin-left: -35px;
+  transform: skew(0deg, 60deg) scale(0.75);
+  background: -webkit-gradient( linear, left bottom, left top, color-stop(0.24, rgb(212, 85, 0)), color-stop(0.62, rgb(250, 164, 15)), color-stop(1, rgb(245, 231, 215)));
+}
+
+.demo2d:hover .demo2d__demo_pos_r {
+  margin-left: 94px;
+}
+
+.demo2d:hover .demo2d__demo_pos_f,
+.demo2d:hover .demo2d__demo_pos_z {
+  z-index: 4;
+  margin-top: 86px;
+  margin-left: 30px;
+  transform-origin: 0 0;
+  transform: scale(1.738, 0.735);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(1, rgb(212, 85, 0)), color-stop(0.62, rgb(250, 164, 15)), color-stop(1, rgb(245, 231, 215)));
+}
+
+.demo2d:hover .demo2d__demo_pos_z {
+  z-index: 1;
+  margin-top: -11px;
+  margin-left: -25px;
+}*/
+
+/*Пример с анимацией*/
+
+/*body {
+  font-size: 31px;
+}
+
+
+@keyframes my-custom-name {
+ 
+  
+  from { margin-left: 0; }
+  50% { margin-left: 140px; }
+  80% { margin-left: 50px; }
+  to { margin-left: 170px; }
+}
+
+div:hover {
+  animation: 1.0s my-custom-name;
+}*/
+
+/*Еще один пример*/
+
+/*body {
+  font-size: 31px;
+}
+
+@keyframes my-custom-name {
+ 
+  from   { margin-left: 0 }
+  90% { margin-left: 140px; }
+	to { margin-left: 100px; }
+}
+
+div {
+  animation-name: my-custom-name;
+  animation-duration: 1.75s; 
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+}*/
+
+/*Пример с анимацией и transition*/
+
+/*body {
+  font-size: 31px;
+}
+
+label {
+  font-size: 16px;
+}
+
+@keyframes my-custom-name {
+ 
+  
+  from {
+    margin-left: 0
+  }
+  90% {
+    margin-left: 110px;
+  }
+  to {
+    margin-left: 100px;
+  }
+}
+
+div {
+  transition: margin-left 1.75s;
+}
+
+input:checked ~ div {
+  animation: 0.75s my-custom-name;  
+  margin-left: 100px;
+}*/
+
+/*Пример задания двух анимаций одновременно*/
+
+/*body {
+  font-size: 31px;
+}
+
+label {
+  font-size: 16px;
+}
+
+@keyframes my-custom-name {
+
+  
+  from {
+    margin-left: 0
+  }
+  90% {
+    margin-left: 110px;
+  }
+  to {
+    margin-left: 100px;
+  }
+}
+
+@keyframes my-custom-name2 {
+  from {
+    color: #000;
+    opacity: 1;
+  }
+  90% {
+    color: #fff;
+    opacity: 0.3;
+  }
+  to {
+    color: #060;
+    opacity: 1;
+  }
+}
+
+div {
+  transition: all 0.75s 0s;
+}
+
+input:checked ~ div {
+  animation: 0.75s my-custom-name, 0.75s my-custom-name2;
+  color: orange;
+  margin-left: 100px;
+}*/
+
+/*Пример с применением animation-play-state*/
+
+/*body {
+  font-size: 31px;
+}
+
+label {
+  font-size: 16px;
+}
+
+@keyframes my-custom-name {
+  
+  
+  from {
+    margin-left: 0
+  }
+  90% {
+    margin-left: 110px;
+  }
+  to {
+    margin-left: 100px;
+  }
+}
+
+@keyframes my-custom-name2 {
+  from {
+    color: #000;
+    opacity: 1;
+  }
+  90% {
+    color: #fff;
+    opacity: 0.8;
+  }
+  to {
+    color: #060;
+    opacity: 1;
+  }
+}
+
+input[id="a"]:checked ~ div {
+  animation: 0.75s my-custom-name infinite, 0.75s my-custom-name2 infinite;
+  color: yellow;
+}
+
+input[id="b"]:checked ~ div {
+  animation-play-state: paused;
+}*/
+
+/*Пример animation-fill-mode*/
+
+/*body {
+  font-size: 31px;
+}
+
+label {
+  font-size: 16px;
+}
+
+@keyframes my-custom-name {
+  
+  from {
+    margin-left: 0
+  }
+  90% {
+    margin-left: 110px;
+  }
+  to {
+    margin-left: 100px;
+  }
+}
+
+@keyframes my-custom-name2 {
+  from {
+    color: #000;
+    opacity: 1;
+  }
+  90% {
+    color: #fff;
+    opacity: 0.8;
+  }
+  to {
+    color: #060;
+    opacity: 1;
+  }
+}
+
+input[id="a"]:checked ~ div {
+  animation: 0.75s my-custom-name, 0.75s my-custom-name2;
+  color: #060;
+}
+
+input[id="b"]:checked ~ div {
+  animation-fill-mode: forward;
+}*/
+
+/*Пример с 3d анимацией*/
+
+/*   .frame {
+width: 200px;
+height: 200px;
+background: yellow;
+opacity: 0.5;
+transition: all 5s linear;
+включаем поддержку 3d
+
+transform-style: preserve-3d;
+}
+
+input:checked ~ .frame {
+transform: rotateY(180deg);	
+}
+
+.wow {
+position: absolute;
+top: 50%;
+left: 50%;
+width: 50px;
+height: 50px;
+margin: -25px 0 0 -25px;
+разворачиваем элемент перпендикулярно 
+	при этом половина его будет с внутренней 
+	стороны желтого квадрата
+
+transform: rotateY(90deg);
+можем это "исправить"
+	transform-origin: 0 0;
+
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+background: #000;
+} */

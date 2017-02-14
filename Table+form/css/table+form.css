@@ -1,0 +1,19 @@
+table{
+	border-collapse: separate;
+	background: orange;
+}
+
+
+col{
+	background-color: green;	
+}
+
+
+colgroup{
+	background-color: blue;
+}
+
+textarea{
+	max-width: 200px;
+	max-height: 200px;
+}

@@ -1,0 +1,25 @@
+@import "imported.css";
+@import "imported1.css";
+
+
+ul{
+
+	color:orange;
+
+}
+																		/*Единицы измерения css*/
+
+/*body{
+	width: 50px;
+}
+*/
+
+.wrapper{
+width: 200%;  /*wrapper 200 процентов от боди, т.е на 100% больше боди*/
+background: red;
+}
+
+.box{        
+	width: 150%;  /*box больше wrapper на 50% т.к. он уже 100% и плюс +50 от этой сотни)))*/
+	background: transparent;
+}

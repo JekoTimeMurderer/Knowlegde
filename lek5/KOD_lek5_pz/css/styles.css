@@ -1,0 +1,366 @@
+
+
+
+
+/*Рекомендации при абсолютном позиционировании*/
+
+
+.parent{
+	position: relative;
+	height: 50px;
+	padding: 20px;
+	background-color: #ccc;
+}
+
+.position{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left:0;
+	top:0;
+	right: 0;
+	bottom: 0;
+	background-color: red;
+	margin:auto;
+}
+
+
+.position_inner{
+	position: absolute;
+	left:0;
+	top:0;
+	right: 0;
+	bottom: 0;
+	background-color: green;
+}
+
+
+ /*Свертсаем интересное задание применяя в основном absolute:fixed (popup)*/
+
+
+
+.pagecontent{  													/*Блок с контентом*/
+	font-size: 24px;
+	margin: 0;
+	padding: 20px;
+	background-color: #efe;
+	/*height: 100%;*/
+
+}
+
+
+
+/*Ниже блок, который спозиционирован относительно боди и зафиксирован(position:fixed)
+при этом с помощью обнулений всех координат (top/left/right/bottom) он растяги-
+вается на весь боди тем замым закрывая собой .pagecontent и в этом случае 
+не удается выделить текст, чтоб его скопировать.(из-за паранжы)*/
+
+
+.paranja{          
+	position: fixed;
+	left:0;
+	top:0;
+	right: 0;
+	bottom: 0;
+}
+
+/*Блок, который имеет функцию банера и должен быть посредине всей странице дабы
+проспамить пользователя. Он также имеет position:fixed, и позиционируется от-
+носительно также спозиционированного блока .paranja (Позиционироваться елеметы,
+например абсолютно, то он будет позиционироваться относительно елемента у
+которого свойство relative И absolule либо fixed (все, кроме static))
+Также мы видим, что отталкивание в левую сторону (left:50%) и padding:20px 
+компенсируется отрицательным margin: -220px, таким образом блок .windows 
+становится по середине.*/
+
+.window{
+	width: 400px;
+	padding: 20px;
+	position: fixed;
+	margin-left: -220px;
+	left: 50%;
+	top: 30%;
+background-color: white;
+}
+
+/*Close - это наш крестик, также спозиционирован абсолютно относительно своего
+родителя у которого также есть position:fixed; - .windows. */
+
+.close{
+	font-size: 20px;
+	text-align: center;
+	line-height: 18px;
+	width: 20px;
+	height: 20px;
+	background-color: red;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+																/*clip*/
+/*Данное свойство вырезает определенную область в позиционированном
+елементе. Все, что не влезло в данную область обрезается и становится
+невидимым.Единственная форма данной области - прямоугольник.
+Синтаксис: clip:rect(50px, 150px, 150px,50px), где ПЕРВАЯ коорданата-это 
+расстояние от верхнего края родителя до ВЕРХНЕГО края области(которую
+ты хочешь вырезать), ВТОРАЯ - расстояние от ЛЕВОГО
+края родителя до ПРАВОГО края области, ТРЕТЬЯ - расстояние от ВЕРХНЕГО края
+родителя до НИЖНЕГО края области, а ЧЕТВЕРТАЯ - расстояние от ЛЕВОГО края
+родителя до ЛЕВОГО края области. Cвойство анулирует все изменения.*/
+
+
+
+.clip{		
+	position: absolute;
+	left: 40px;
+	top:40px;
+	border: 3px solid red;
+	background-color: yellow;
+	clip:rect(80px, 150px, 150px, 50px);
+}														
+
+
+																	/*overflow*/
+
+.block{
+	border: 2px solid red;
+
+	width: 60px;
+	height: 60px;
+
+	padding: 10px;
+	margin: 40px;
+
+/*overflow: auto;*/
+/*overflow: scroll;*/
+overflow: hidden;
+	/*overflow-x:hidden;*/
+	/*overflow-y:hidden;*/
+}
+
+															
+
+.overflow{
+
+width: 50%;
+height: 100px;
+
+margin-bottom: 50px;
+background: #ccc;
+overflow: hidden;
+}
+
+.overflow-text{
+
+  font-size: 25px;
+	/*position: relative;*/
+	overflow: hidden;
+	width: 60%;
+	text-overflow: ellipsis;
+	background: #ccc;
+}
+
+
+																			/*Слои*/
+
+.layer{
+	width: 200px;
+	height: 200px;
+	background-color: #ccc;
+}																			
+
+.someimg{
+	position: relative;
+	left: 180px;	
+	z-index: 3;
+}
+
+.kaskad_index,
+.kaskad_index:after,
+.kaskad_index:before{
+width: 200px;
+height: 200px;
+padding: 10px 10px 40px 10px;
+margin: 40px;
+background-color: #eee;
+border: 1px solid black;
+position: relative;
+}
+
+.kaskad_index:before{
+	position: absolute;
+	top:10px;
+	left:10px;
+	z-index: -2;
+	content: '';
+	margin: 0;
+}
+
+.kaskad_index:after{
+position: absolute;
+top: 4px;
+left: 4px;
+z-index: -1;
+content: '';
+margin:0;
+}
+
+																			/*Таблицы*/
+
+table{
+	font-size: arial;
+	font-size: 20px;
+	border: 2px solid #999;
+}
+
+caption{
+	caption-side: bottom; /*определяет место заглавия*/
+	background-color: #318ba3;
+	color: #fff;
+	padding: 5px;
+	text-transform: capitalize;
+	margin:5px;
+}
+
+
+col:nth-child(1){  /*обращается к первой колонке*/
+	background-color: orange;
+}
+
+col:nth-child(2){
+	background-color: blue; /*Обращаемся ко второй колонке*/
+}
+
+thead,
+tbody,
+tfoot
+{
+		font-style: italic;
+}
+
+th,
+td{
+	padding: 8px 15px;
+	text-transform: capitalize;
+}
+
+tbody tr{
+	background-color: #ecfad6;
+}
+
+tbody td:first-child{ /*Обращаемся к первому td в tbody*/
+	background-color: #bbe774;
+}
+
+
+ /*Та же самая таблица, только верстаем её с помощью дивов */
+
+ .table{
+ 	display: table;
+ 	font-family: arial;
+ 	font-size: 20px;
+ 	border: 2px solid #999;
+ }
+
+ .caption{
+ 	display: table-caption;
+ 	caption-side: bottom;
+ 	background-color: #318ba3;
+ 	color: #fff;
+ 	padding: 5px;
+ 	text-transform: capitalize;
+ 	margin-top: 5px;
+ }
+
+ .thead{
+ 	display: table-header-group;
+ 	background-color: #bbe774;
+ }
+
+ .tbody{
+ 	display: table-row-group;
+ 	background-color: #e6f1f3;
+ }
+
+ .tfoot{
+ 	display: table-footer-group;
+ 	background-color: #ecfbd4;
+ }
+
+ .thead,
+ .tbody,
+ .tfoot{
+ 	font-style: italic;
+ }
+
+ .tr{
+ 	display: table-row;
+ }
+
+ .th,
+ .td{
+ 	display: table-cell;
+ 	padding: 8px 15px;
+ }
+
+ 																		/*table-layout */
+
+ body
+{
+	font-size: 21px;
+}
+
+td { padding: 5px 10px;}
+
+/*
+	table-layout: auto
+	  ширина яцеек определяется контентом
+	  если его больше чем заданная ширина ячейки,
+	  ячейки и потом таблица расширяются
+	  => width, height = min-width, min-height
+	  
+	table-layout: fixed
+	  контент может выпрыгнуть из ячеек таблицы
+	  его можно скрыть по overflow
+
+*/
+
+.t1
+{
+	table-layout: fixed;
+}
+
+.t1,
+.t2
+{
+	width: 100%;	
+	white-space: nowrap;
+	
+	border: 2px solid black;
+}
+
+.t1 td:first-child,
+.t2 td:first-child
+{
+	border: 2px solid red;
+}
+
+
+ul { 
+  font-size: 20px; 
+  list-style: none;
+}
+
+li {
+  background: #eee;
+  display: inline-block;
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+}
+
+.choosen {
+  /*visibility: hidden;*/
+  display: inline;splay: none;
+}
